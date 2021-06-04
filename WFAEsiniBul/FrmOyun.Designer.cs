@@ -1,7 +1,7 @@
 ﻿
 namespace WFAEsiniBul
 {
-    partial class Form1
+    partial class FrmOyun
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@ namespace WFAEsiniBul
             this.pnlKartlar.Size = new System.Drawing.Size(500, 500);
             this.pnlKartlar.TabIndex = 0;
             // 
-            // Form1
+            // FrmOyun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -52,9 +52,11 @@ namespace WFAEsiniBul
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmOyun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eşini Bul";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmOyun_FormClosing);
+            this.Shown += new System.EventHandler(this.FrmOyun_Shown);
             this.ResumeLayout(false);
 
         }
