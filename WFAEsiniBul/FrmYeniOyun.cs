@@ -23,5 +23,10 @@ namespace WFAEsiniBul
             Hide();
             new FrmOyun(this,zs).ShowDialog();
         }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

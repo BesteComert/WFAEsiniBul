@@ -17,6 +17,8 @@ namespace WFAEsiniBul
         int sutunAdet = 4;
         int kartBoyut = 75;
         int kartArasi = 5;
+        int tiklamaSay=0;
+        int acilanKartlar=0;
         int[] bayrakHavuzu;
         int[] bayraklar;
         private readonly ZorlukSeviye _zs;
@@ -83,7 +85,7 @@ namespace WFAEsiniBul
             kartlar = new List<PictureBox>();
             pnlKartlar.Width = sutunAdet * (kartArasi + kartBoyut) - kartArasi;
             pnlKartlar.Height = satirAdet * (kartArasi + kartBoyut) - kartArasi;
-            ClientSize = new Size(pnlKartlar.Width + 20, pnlKartlar.Height + 20);
+            ClientSize = new Size(pnlKartlar.Width + 20, pnlKartlar.Height + 60);
             for (int i = 0; i < KartAdet; i++)
             {
                 PictureBox pb = new PictureBox();
@@ -104,6 +106,8 @@ namespace WFAEsiniBul
         private void Pb_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
+            tiklamaSay++;
+            lblDeneme.Text = "Deneme Adedi : " + tiklamaSay;
             if (acilanlar.Count == 1 && pb == acilanlar[0])
                 return;//acilana tekrar tıkladıysa
             if (acilanlar.Count == 2)
@@ -114,6 +118,18 @@ namespace WFAEsiniBul
             {
                 Thread.Sleep(500); //aynı olan açık kartları gizlenmeden önce görebilsin
                 AcikKartlariGizle();
+                acilanKartlar += 2;
+                if(acilanKartlar == KartAdet)
+                {
+                    DialogResult dr = MessageBox.Show($"Tebrikler {tiklamaSay} denemede kazandınız! Yeniden oynamak ister misiniz?","Oyun bitti",MessageBoxButtons.YesNo,MessageBoxIcon.Question,MessageBoxDefaultButton.Button1);
+                    if (dr == DialogResult.Yes)
+                    {
+                        this.Close();
+                        _anaform.Show();
+                    }
+                    else
+                        Application.Exit();
+                }
             }
         }
         private void KartiAc(PictureBox pb)
@@ -162,6 +178,12 @@ namespace WFAEsiniBul
         private void FrmOyun_Shown(object sender, EventArgs e)
         {
             KartlariKisaSureliGoster();
+        }
+
+        private void yeniOyunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            _anaform.Show();
         }
     }
 }

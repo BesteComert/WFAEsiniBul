@@ -30,10 +30,11 @@ namespace WFAEsiniBul
         private void InitializeComponent()
         {
             this.gboSeviye = new System.Windows.Forms.GroupBox();
-            this.rbKolay = new System.Windows.Forms.RadioButton();
-            this.rbOrta = new System.Windows.Forms.RadioButton();
             this.rbZor = new System.Windows.Forms.RadioButton();
+            this.rbOrta = new System.Windows.Forms.RadioButton();
+            this.rbKolay = new System.Windows.Forms.RadioButton();
             this.btnBaslat = new System.Windows.Forms.Button();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.gboSeviye.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,26 @@ namespace WFAEsiniBul
             this.gboSeviye.TabStop = false;
             this.gboSeviye.Text = "Zorluk Seviyesi";
             // 
+            // rbZor
+            // 
+            this.rbZor.AutoSize = true;
+            this.rbZor.Location = new System.Drawing.Point(24, 193);
+            this.rbZor.Name = "rbZor";
+            this.rbZor.Size = new System.Drawing.Size(141, 35);
+            this.rbZor.TabIndex = 0;
+            this.rbZor.Text = "Zor (8x8)";
+            this.rbZor.UseVisualStyleBackColor = true;
+            // 
+            // rbOrta
+            // 
+            this.rbOrta.AutoSize = true;
+            this.rbOrta.Location = new System.Drawing.Point(24, 131);
+            this.rbOrta.Name = "rbOrta";
+            this.rbOrta.Size = new System.Drawing.Size(153, 35);
+            this.rbOrta.TabIndex = 0;
+            this.rbOrta.Text = "Orta (6x6)";
+            this.rbOrta.UseVisualStyleBackColor = true;
+            // 
             // rbKolay
             // 
             this.rbKolay.AutoSize = true;
@@ -63,42 +84,34 @@ namespace WFAEsiniBul
             this.rbKolay.Text = "Kolay (4x4)";
             this.rbKolay.UseVisualStyleBackColor = true;
             // 
-            // rbOrta
-            // 
-            this.rbOrta.AutoSize = true;
-            this.rbOrta.Location = new System.Drawing.Point(24, 131);
-            this.rbOrta.Name = "rbOrta";
-            this.rbOrta.Size = new System.Drawing.Size(153, 35);
-            this.rbOrta.TabIndex = 0;
-            this.rbOrta.Text = "Orta (6x6)";
-            this.rbOrta.UseVisualStyleBackColor = true;
-            // 
-            // rbZor
-            // 
-            this.rbZor.AutoSize = true;
-            this.rbZor.Location = new System.Drawing.Point(24, 193);
-            this.rbZor.Name = "rbZor";
-            this.rbZor.Size = new System.Drawing.Size(141, 35);
-            this.rbZor.TabIndex = 0;
-            this.rbZor.Text = "Zor (8x8)";
-            this.rbZor.UseVisualStyleBackColor = true;
-            // 
             // btnBaslat
             // 
             this.btnBaslat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnBaslat.Location = new System.Drawing.Point(20, 302);
+            this.btnBaslat.Location = new System.Drawing.Point(20, 284);
             this.btnBaslat.Name = "btnBaslat";
-            this.btnBaslat.Size = new System.Drawing.Size(322, 72);
+            this.btnBaslat.Size = new System.Drawing.Size(322, 48);
             this.btnBaslat.TabIndex = 1;
             this.btnBaslat.Text = "OYUNU BAŞLAT";
             this.btnBaslat.UseVisualStyleBackColor = true;
             this.btnBaslat.Click += new System.EventHandler(this.btnBaslat_Click);
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKapat.Location = new System.Drawing.Point(20, 338);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(322, 48);
+            this.btnKapat.TabIndex = 1;
+            this.btnKapat.Text = "ÇIK";
+            this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // FrmYeniOyun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 398);
+            this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.btnBaslat);
             this.Controls.Add(this.gboSeviye);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -118,5 +131,6 @@ namespace WFAEsiniBul
         private System.Windows.Forms.RadioButton rbOrta;
         private System.Windows.Forms.RadioButton rbKolay;
         private System.Windows.Forms.Button btnBaslat;
+        private System.Windows.Forms.Button btnKapat;
     }
 }
